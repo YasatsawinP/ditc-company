@@ -28,7 +28,7 @@ function DeleteModal({
         </button>
         <h2 className="font-bold text-lg text-center font-sans">Delete Personnel?</h2>
         <p className="text-xs text-center text-black mt-2 font-sans font-normal">
-          If deleted, it cannot be recovered.
+          Delete &ldquo;{target.name}&rdquo;? If deleted, it cannot be recovered.
         </p>
         <div className="flex justify-center gap-3 mt-6">
           <button
