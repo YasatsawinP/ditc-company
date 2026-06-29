@@ -54,7 +54,7 @@ export default function Navbar() {
     <>
       {/* ── Navbar bar ── */}
       <nav className="fixed top-0 left-0 right-0 z-50 h-16 bg-white shadow-sm lg:h-[80px]">
-        <div className="flex items-center justify-start px-4 h-full w-full lg:px-8 xl:px-12 gap-16 lg:gap-24 xl:gap-32">
+        <div className="flex items-center justify-between lg:justify-start px-4 h-full w-full lg:px-8 xl:px-12 gap-16 lg:gap-24 xl:gap-32">
 
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
