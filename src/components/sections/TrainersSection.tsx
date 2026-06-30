@@ -18,13 +18,13 @@ export default function TrainersSection() {
     <section id="trainers" className="py-16 px-4 bg-background lg:py-20">
       <div className="max-w-[1200px] mx-auto lg:max-w-screen-2xl lg:px-20">
         <p className="text-[12px] lg:text-[16px] font-medium lg:font-semibold text-primary uppercase tracking-widest text-center mb-[4px] lg:mb-[8px]">
-          MEET OUR EXPERTS
+          OUR TRAINER NETWORK
         </p>
         <h2 className="text-[14px] lg:text-5xl font-bold text-foreground leading-[27px] lg:leading-[1.3] text-center mb-[10px] lg:mb-[16px]">
-          Trainers worth booking.
+          Specialists who know how to deliver.
         </h2>
         <p className="text-[10px] lg:text-[16px] font-normal text-muted-foreground leading-normal lg:leading-relaxed text-center mb-[24px] lg:mb-[48px]">
-          Click on an expert to learn more about their background.
+          Our trainers are vetted professionals in their fields. Want to join the network? We'd love to hear from you.
         </p>
 
         <div className="flex justify-end mb-[16px] lg:mb-6">

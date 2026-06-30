@@ -7,13 +7,13 @@ export default async function StatisticsSection() {
     <section id="statistics" className="py-16 px-4 bg-background lg:py-24 lg:bg-white">
       <div className="text-center mb-12 flex flex-col items-center lg:max-w-3xl lg:mx-auto lg:mb-16">
         <p className="text-[12px] lg:text-[14px] font-medium lg:font-semibold text-primary uppercase tracking-widest text-center mb-[4px] lg:mb-[12px]">
-          OUR IMPACT
+          TRUSTED RESULTS
         </p>
         <h2 className="text-[14px] lg:text-[48px] xl:text-[54px] font-bold text-foreground lg:text-gray-900 leading-[27px] lg:leading-[1.15] text-center mb-[15px] lg:mb-[20px]">
-          Numbers that speak for themselves.
+          Outcomes that matter.
         </h2>
         <p className="text-[10px] lg:text-[16px] xl:text-[18px] font-normal text-muted-foreground lg:text-gray-600 leading-normal lg:leading-relaxed text-center">
-          Outcomes from cohorts run across business, technology, and design programs.
+          Here's what organizations and trainers have achieved through programs built with DITC.
         </p>
       </div>
 

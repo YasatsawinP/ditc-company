@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar"
 import HeroSection from "@/components/sections/HeroSection"
 import Footer from "@/components/Footer"
-import AboutSection from "@/components/sections/AboutSection"
+import HowItWorksSection from "@/components/sections/HowItWorksSection"
 import StatisticsSection from "@/components/sections/StatisticsSection"
 import CourseShowcaseSection from "@/components/sections/CourseShowcaseSection"
 import IndustryLeadersSection from "@/components/sections/IndustryLeadersSection"
@@ -13,7 +13,7 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <AboutSection />
+      <HowItWorksSection />
       <StatisticsSection />
       <CourseShowcaseSection />
       <IndustryLeadersSection />

@@ -43,7 +43,7 @@ export default function ContactSection() {
         </h2>
 
         <p className="text-[10px] lg:text-[16px] font-normal text-muted-foreground leading-normal lg:leading-relaxed text-center mb-[24px] lg:mb-[48px]">
-          We typically respond within one working day. For urgent requests, please call.
+          We typically respond within one working day.
         </p>
 
         {/* 2-column on desktop: info+map left, form right */}

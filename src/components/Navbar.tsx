@@ -5,18 +5,18 @@ import Link from "next/link"
 import { Menu } from "lucide-react"
 
 const NAV_LINKS = [
-  { label: "About Us", href: "#about" },
-  { label: "Statistic", href: "#statistics" },
-  { label: "Course Showcase", href: "#courses" },
-  { label: "Our Client", href: "#clients" },
-  { label: "Expert Trainers", href: "#trainers" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "How it works", href: "#how-it-works" },
+  { label: "Trusted Result", href: "#statistics" },
+  { label: "Programs We've Built", href: "#courses" },
+  { label: "Organizations We've Worked With", href: "#industry-leaders" },
+  { label: "Our Trainer Network", href: "#trainers" },
+  { label: "Get In Touch", href: "#contact" },
 ]
 
 const SECTION_IDS = NAV_LINKS.map((l) => l.href.slice(1))
 
 export default function Navbar() {
-  const [activeSection, setActiveSection] = useState("about")
+  const [activeSection, setActiveSection] = useState(SECTION_IDS[0])
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -121,14 +121,14 @@ export default function Navbar() {
           {NAV_LINKS.map(({ label, href }) => {
             const isActive = activeSection === href.slice(1)
             return isActive ? (
-              /* About Us pill — 217×43px, left:10px from container edge */
+              /* Active pill — 217×43px, left:10px from container edge */
               <a
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-center bg-white text-foreground
                   rounded-[8px] ml-[10px] w-[217px] h-[43px]
-                  text-sm font-normal leading-none flex-shrink-0"
+                  text-[11px] font-normal leading-none flex-shrink-0 text-center px-2"
               >
                 {label}
               </a>
@@ -140,7 +140,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-center text-white
                   w-full h-[21px]
-                  text-sm font-normal leading-none flex-shrink-0"
+                  text-[11px] font-normal leading-none flex-shrink-0 px-2 text-center"
               >
                 {label}
               </a>
