@@ -37,7 +37,7 @@ export default async function HeroSection() {
         </h1>
 
         {/* Desktop Title */}
-        <h1 className="hidden lg:block font-bold text-white text-center leading-tight mt-[26px] px-4 lg:text-[52px] xl:text-[60px] tracking-tight">
+        <h1 className="hidden lg:block font-bold text-white text-center leading-tight mt-[26px] px-4 lg:text-[52px] xl:text-[60px] tracking-tight lg:whitespace-nowrap">
           We design training programs that actually work.
         </h1>
 
