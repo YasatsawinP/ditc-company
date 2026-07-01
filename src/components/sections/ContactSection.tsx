@@ -39,7 +39,7 @@ export default function ContactSection() {
         </p>
 
         {/* Mobile Title */}
-        <h2 className="block lg:hidden text-[22px] font-bold text-[#2F2119] leading-[1.3] text-center mb-[12px]">
+        <h2 className="block lg:hidden text-[20px] font-bold text-[#2F2119] leading-[1.3] text-center mb-[12px]">
           READY TO GET STARTED?
         </h2>
         {/* Desktop Title */}
@@ -48,8 +48,8 @@ export default function ContactSection() {
         </h2>
 
         {/* Mobile Subtitle */}
-        <p className="block lg:hidden text-[12px] font-normal text-gray-700 leading-[1.6] text-center mb-[24px] px-2">
-          Whether you're a company looking to train your team<br/>or a trainer ready to share your expertise — drop us a message and let's talk.
+        <p className="block lg:hidden text-[11px] sm:text-[12px] font-normal text-gray-700 leading-[1.6] text-center mb-[24px] px-0">
+          Whether you're a company looking to train your team or a trainer ready to share your expertise — drop us a message and let's talk.
         </p>
         {/* Desktop Subtitle */}
         <p className="hidden lg:block text-[10px] lg:text-[16px] font-normal text-muted-foreground leading-normal lg:leading-relaxed text-center mb-[24px] lg:mb-[48px]">

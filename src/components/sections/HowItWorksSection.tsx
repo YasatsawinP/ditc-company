@@ -22,14 +22,14 @@ export default function HowItWorksSection() {
       <div className="max-w-screen-2xl mx-auto lg:px-12 xl:px-24">
 
         {/* Mobile: Stacked, Desktop: Image Left, Content Right */}
-        <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start">
 
           {/* Mobile Header (Hidden on Desktop) */}
           <div className="flex flex-col lg:hidden order-1">
             <p className="text-[12px] font-medium text-primary uppercase tracking-widest text-center mb-[4px]">
               HOW IT WORKS
             </p>
-            <h2 className="text-[16px] font-bold text-foreground leading-[27px] text-center mb-[15px]">
+            <h2 className="text-[20px] font-bold text-foreground leading-[27px] text-center mb-[15px]">
               From idea to classroom in 3 steps.
             </h2>
             <p className="text-[10px] font-normal text-foreground leading-normal text-center mb-[24px]">
@@ -38,7 +38,7 @@ export default function HowItWorksSection() {
           </div>
 
           {/* Image Column (Mobile: order-2, Desktop: order-1) */}
-          <div className="w-full h-[265px] bg-surface border border-border mb-[34px] lg:mt-0 lg:mb-0 lg:aspect-[3/4] lg:h-auto lg:w-full relative order-2 lg:order-1">
+          <div className="w-full h-[265px] bg-[#F2F1EC] border border-border mb-[34px] lg:mt-0 lg:mb-0 lg:aspect-[3/4] lg:h-auto lg:w-full relative order-2 lg:order-1">
             <svg className="absolute inset-0 w-full h-full text-gray-300" preserveAspectRatio="none" viewBox="0 0 100 100">
               <line x1="0" y1="0" x2="100" y2="100" stroke="currentColor" strokeWidth="0.5" />
               <line x1="100" y1="0" x2="0" y2="100" stroke="currentColor" strokeWidth="0.5" />
@@ -49,28 +49,28 @@ export default function HowItWorksSection() {
           <div className="flex flex-col order-3 lg:order-2">
             {/* Desktop Header (Hidden on Mobile) */}
             <div className="hidden lg:flex flex-col">
-              <p className="text-[14px] font-semibold text-primary uppercase tracking-wider text-left mb-3">
+              <p className="text-[14px] font-bold text-[#F48220] uppercase tracking-wider text-left mb-3">
                 HOW IT WORKS
               </p>
-              <h2 className="text-5xl font-bold text-gray-900 leading-[1.1] text-left mb-6">
-                From idea to classroom in 3 steps.
+              <h2 className="text-[44px] xl:text-[54px] font-bold text-[#2F1D19] leading-[1.15] text-left mb-4 tracking-tight">
+                From idea to <br className="hidden lg:block"/> classroom in 3 steps.
               </h2>
-              <p className="text-base font-normal text-gray-600 leading-relaxed mb-10 text-left">
+              <p className="text-[16px] font-normal text-[#333333] leading-relaxed mb-10 text-left">
                 No lengthy setup. Just tell us what you need and we'll handle the rest.
               </p>
             </div>
 
-            <div className="flex flex-col gap-[34px] lg:gap-6">
+            <div className="flex flex-col gap-[34px] lg:gap-10">
               {steps.map((step) => (
-                <div key={step.number} className="flex flex-row items-start gap-[37px] lg:gap-5 xl:gap-6 w-full">
-                  <div className="w-16 h-16 bg-primary rounded-soft flex items-center justify-center flex-shrink-0 lg:w-[60px] lg:h-[60px]">
-                    <span className="text-white font-bold text-sm lg:text-lg">{step.number}</span>
+                <div key={step.number} className="flex flex-row items-start gap-[37px] lg:gap-6 xl:gap-8 w-full">
+                  <div className="w-16 h-16 bg-[#F48220] rounded-soft flex items-center justify-center flex-shrink-0 lg:w-[64px] lg:h-[64px] lg:rounded-[8px]">
+                    <span className="text-white font-bold text-sm lg:text-[20px]">{step.number}</span>
                   </div>
-                  <div className="flex flex-col gap-[12px] lg:gap-1 xl:gap-2 lg:pt-1">
-                    <h5 className="text-sm font-bold text-foreground lg:text-base lg:text-gray-900 lg:leading-tight">
+                  <div className="flex flex-col gap-[12px] lg:gap-2 lg:pt-1">
+                    <h5 className="text-sm font-bold text-foreground lg:text-[18px] lg:text-[#2F1D19] lg:leading-tight">
                       {step.title}
                     </h5>
-                    <p className="text-[10px] font-normal text-foreground leading-normal lg:text-[13px] lg:text-gray-500 lg:leading-relaxed">
+                    <p className="text-[10px] font-normal text-foreground leading-normal lg:text-[14px] lg:text-[#5C5C5C] lg:leading-[1.6]">
                       {step.body}
                     </p>
                   </div>

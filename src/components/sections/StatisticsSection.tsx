@@ -5,14 +5,14 @@ export default async function StatisticsSection() {
 
   return (
     <section id="statistics" className="py-16 px-4 bg-background lg:py-24 lg:bg-white">
-      <div className="text-center mb-10 flex flex-col items-center lg:max-w-3xl lg:mx-auto lg:mb-16">
+      <div className="text-center mb-10 flex flex-col items-center lg:max-w-5xl lg:mx-auto lg:mb-16">
         <p className="text-[12px] lg:text-[14px] font-medium lg:font-semibold text-primary uppercase tracking-widest text-center mb-[8px] lg:mb-[12px]">
           TRUSTED RESULTS
         </p>
-        <h2 className="text-[24px] lg:text-[48px] xl:text-[54px] font-bold text-foreground lg:text-gray-900 leading-[1.3] lg:leading-[1.15] text-center mb-[12px] lg:mb-[20px]">
+        <h2 className="text-[20px] lg:text-[48px] xl:text-[54px] font-bold text-foreground lg:text-gray-900 leading-[1.3] lg:leading-[1.15] text-center mb-[12px] lg:mb-[20px]">
           Outcomes that matter.
         </h2>
-        <p className="text-[12px] px-4 lg:text-[16px] xl:text-[18px] font-normal text-foreground lg:text-gray-600 leading-[1.6] lg:leading-relaxed text-center">
+        <p className="text-[12px] px-4 lg:text-[16px] xl:text-[18px] font-normal text-foreground lg:text-gray-600 leading-[1.6] lg:leading-relaxed text-center lg:whitespace-nowrap">
           Here's what organizations and trainers have achieved through programs built with DITC.
         </p>
       </div>

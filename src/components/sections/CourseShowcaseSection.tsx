@@ -13,6 +13,8 @@ export default function CourseShowcaseSection() {
   const [allCourses, setAllCourses] = useState<Course[]>([])
   const [activeFilter, setActiveFilter] = useState<FilterTab>("All")
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [dropdownSearch, setDropdownSearch] = useState("")
 
   useEffect(() => {
     getCourses().then(setAllCourses)
@@ -30,30 +32,83 @@ export default function CourseShowcaseSection() {
         <div className="flex flex-col mb-[15px] lg:mb-12 lg:flex-row lg:items-end lg:justify-between">
           {/* Titles */}
           <div className="text-center flex flex-col items-center lg:items-start lg:text-left">
-            <p className="text-[13px] lg:text-[14px] font-medium lg:font-semibold text-primary uppercase tracking-widest text-center lg:text-left mb-[8px] lg:mb-3">
+            <p className="text-[13px] lg:text-[14px] font-medium lg:font-bold text-primary uppercase tracking-widest text-center lg:text-left mb-[8px] lg:mb-3">
               PROGRAMS WE'VE BUILT
             </p>
-            <h2 className="text-[24px] lg:text-[48px] xl:text-[54px] font-bold text-[#2F2119] lg:text-gray-900 leading-[1.3] lg:leading-[1.15] text-center lg:text-left mb-[15px] lg:mb-0">
-              Real programs. Real impact.
+            <h2 className="text-[20px] lg:text-[44px] xl:text-[54px] font-bold text-[#2F2119] lg:text-[#2F1D19] leading-[1.3] lg:leading-[1.15] text-center lg:text-left mb-[15px] lg:mb-0 tracking-tight">
+              Real programs. <br className="hidden lg:block"/> Real impact.
             </h2>
           </div>
 
           {/* Filter / View All */}
-          <div className="flex justify-end mb-4 lg:mb-0 lg:pb-3 w-full lg:w-auto">
+          <div className="flex justify-end mb-4 lg:mb-0 lg:pb-2 w-full lg:w-auto relative">
             {/* Mobile View All */}
             <a href="#all" className="block lg:hidden text-[13px] font-medium text-primary underline underline-offset-4">
               View All
             </a>
-            {/* Desktop Filter */}
-            <select
-              value={activeFilter}
-              onChange={(e) => setActiveFilter(e.target.value as FilterTab)}
-              className="hidden lg:block border border-border rounded-soft bg-background text-foreground lg:text-[14px] px-3 py-2 outline-none cursor-pointer focus:border-primary"
-            >
-              {FILTER_TABS.map((tab) => (
-                <option key={tab} value={tab}>{tab}</option>
-              ))}
-            </select>
+
+            {/* Desktop Custom Dropdown */}
+            <div className="hidden lg:block relative z-50 min-w-[160px]">
+              {/* Trigger Button */}
+              <div 
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className={`flex items-center justify-between border ${isDropdownOpen ? 'border-[#F48220]' : 'border-[#F48220]/50 hover:border-[#F48220]'} transition-colors rounded-[6px] bg-white text-[#333333] text-[14px] px-4 py-2 cursor-pointer select-none`}
+              >
+                <span>{activeFilter}</span>
+                <svg className={`w-4 h-4 text-gray-500 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+              </div>
+
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <>
+                  {/* Invisible overlay to close dropdown when clicking outside */}
+                  <div className="fixed inset-0 z-40" onClick={() => setIsDropdownOpen(false)} />
+                  
+                  <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-[#F48220] rounded-[6px] shadow-lg z-50 overflow-hidden flex flex-col py-1">
+                    {/* Search Bar */}
+                    <div className="px-2 pb-2 pt-1 relative">
+                      <input 
+                        type="text" 
+                        placeholder="Search" 
+                        value={dropdownSearch}
+                        onChange={(e) => setDropdownSearch(e.target.value)}
+                        className="w-full pl-3 pr-8 py-2 text-[13px] bg-white outline-none rounded-[4px] border border-transparent hover:border-gray-200 focus:border-[#F48220]/50 transition-colors"
+                      />
+                      <svg className="w-4 h-4 text-gray-600 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    
+                    <div className="w-full h-px bg-gray-100 mb-1" />
+
+                    {/* Options List */}
+                    <div className="flex flex-col max-h-[200px] overflow-y-auto px-1">
+                      {FILTER_TABS.filter(tab => tab.toLowerCase().includes(dropdownSearch.toLowerCase())).map((tab) => (
+                        <div
+                          key={tab}
+                          onClick={() => {
+                            setActiveFilter(tab)
+                            setIsDropdownOpen(false)
+                            setDropdownSearch("")
+                          }}
+                          className={`flex items-center justify-between px-3 py-2 text-[14px] cursor-pointer rounded-[4px] ${activeFilter === tab ? 'bg-[#F3F4F6] text-[#333333]' : 'bg-white text-[#333333] hover:bg-gray-50'}`}
+                        >
+                          <span>{tab}</span>
+                          {activeFilter === tab && (
+                            <svg className="w-4 h-4 text-[#F48220]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                          )}
+                        </div>
+                      ))}
+                      
+                      {/* Empty state for search */}
+                      {FILTER_TABS.filter(tab => tab.toLowerCase().includes(dropdownSearch.toLowerCase())).length === 0 && (
+                        <div className="px-3 py-4 text-center text-[13px] text-gray-500">
+                          No results found
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         </div>
 

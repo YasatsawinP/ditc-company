@@ -8,7 +8,7 @@ export default function OurClientSection() {
           TRUSTED BY
         </p>
         
-        <h2 className="text-[16px] font-bold text-content text-center leading-none mb-[4px]">
+        <h2 className="text-[20px] font-bold text-content text-center leading-none mb-[4px]">
           Industry leaders.
         </h2>
         

@@ -12,24 +12,32 @@ export default async function HeroSection() {
   return (
     <section
       id="hero"
-      style={{ backgroundImage: "url('/globe.svg')" }}
-      className="relative w-full min-h-screen bg-gray-900 bg-cover bg-center overflow-hidden flex flex-col items-center lg:min-h-screen lg:py-16"
+      className="relative w-full min-h-screen bg-[#0F1115] bg-cover bg-center overflow-hidden flex flex-col items-center lg:min-h-screen lg:py-16"
     >
+      {/* Video Background */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-70"
+      >
+        <source src="/videos/hero-bg.mp4" type="video/mp4" />
+      </video>
+
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/40 lg:bg-black/20 z-[5]" />
 
-      {/* Main content — vertically centered in upper portion */}
-      <div className="relative z-10 flex flex-col items-center w-full pt-[30vh] pb-[20vh] lg:pt-[8vh] lg:pb-[10vh] lg:max-w-3xl lg:mx-auto">
-
-
+      {/* Main content — vertically centered */}
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full flex-1 lg:max-w-[1200px] lg:mx-auto px-4">
 
         {/* Mobile Title */}
-        <h1 className="block lg:hidden text-[26px] font-bold text-white text-center leading-[1.25] mt-4 px-4 tracking-tight">
+        <h1 className="block lg:hidden text-[26px] font-bold text-white text-center leading-[1.25] tracking-tight">
           We design training programs<br/>that actually work.
         </h1>
 
         {/* Desktop Title */}
-        <h1 className="hidden lg:block text-[14px] font-bold text-white text-center leading-tight mt-[26px] px-4 lg:text-6xl">
+        <h1 className="hidden lg:block font-bold text-white text-center leading-tight mt-[26px] px-4 lg:text-[52px] xl:text-[60px] tracking-tight">
           We design training programs that actually work.
         </h1>
 
@@ -39,8 +47,9 @@ export default async function HeroSection() {
         </p>
 
         {/* Desktop Body */}
-        <p className="hidden lg:block text-[12px] font-normal text-white leading-[150%] text-center mt-4 px-[24px] max-w-[420px] lg:text-xl lg:max-w-2xl lg:mx-auto">
-          Whether you're an organization looking to upskill your team, or an expert ready to share your knowledge — DITC handles the rest.
+        <p className="hidden lg:block font-normal text-white leading-[1.6] text-center mt-6 px-[24px] lg:text-[18px] xl:text-[20px] lg:max-w-[850px] lg:mx-auto">
+          Whether you're an organization looking to upskill your team,<br className="hidden lg:block" />
+          or an expert ready to share your knowledge — DITC handles the rest.
         </p>
 
         {/* Mobile Button */}
@@ -57,12 +66,25 @@ export default async function HeroSection() {
         </div>
 
         {/* Desktop Button */}
-        <div className="hidden lg:flex justify-center mt-[40px] lg:mx-auto">
+        <div className="hidden lg:flex justify-center mt-[48px] lg:mx-auto">
           <a
             href="#contact"
-            className="flex items-center justify-center w-[130px] h-[36px] rounded-soft bg-primary text-white text-[12px] font-medium px-4 py-2 hover:bg-primary-hover transition-colors lg:w-[160px] lg:h-[48px] lg:text-base"
+            className="group relative flex items-center w-[240px] h-[56px] rounded-[8px] bg-white p-[6px] shadow-md overflow-hidden transition-all duration-300"
           >
-            Contact Us
+            {/* Expanding Orange Background */}
+            <div className="absolute left-[6px] top-[6px] w-[44px] h-[44px] bg-[#F48220] rounded-[6px] transition-all duration-500 ease-in-out group-hover:w-[calc(100%-12px)] z-0" />
+            
+            {/* Sliding Arrow */}
+            <div className="absolute left-[6px] w-[44px] h-[44px] flex items-center justify-center text-white z-10 transition-transform duration-500 ease-in-out group-hover:translate-x-[184px]">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </div>
+
+            {/* Text */}
+            <span className="relative z-10 text-[#5C5C5C] text-[16px] font-medium w-full text-center pl-10 transition-all duration-500 ease-in-out group-hover:text-white group-hover:pl-0 group-hover:pr-10">
+              Contact Us
+            </span>
           </a>
         </div>
 
