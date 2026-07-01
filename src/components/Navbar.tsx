@@ -7,8 +7,8 @@ import { Menu } from "lucide-react"
 const NAV_LINKS = [
   { label: "How it works", href: "#how-it-works" },
   { label: "Trusted Result", href: "#statistics" },
-  { label: "Programs We've Built", href: "#courses" },
-  { label: "Organizations We've Worked With", href: "#industry-leaders" },
+  { label: "Programs We've Build", href: "#courses" },
+  { label: "Organization We've Worked With", href: "#industry-leaders" },
   { label: "Our Trainer Network", href: "#trainers" },
   { label: "Get In Touch", href: "#contact" },
 ]
@@ -54,10 +54,10 @@ export default function Navbar() {
     <>
       {/* ── Navbar bar ── */}
       <nav className="fixed top-0 left-0 right-0 z-50 h-16 bg-white shadow-sm lg:h-[80px]">
-        <div className="flex items-center justify-between lg:justify-start px-4 h-full w-full lg:px-8 xl:px-12 gap-16 lg:gap-24 xl:gap-32">
+        <div className="flex items-center justify-between px-4 h-full w-full lg:px-8 xl:px-12">
 
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0 mr-auto">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/logo/logo-ditc-dark.svg"
@@ -67,17 +67,17 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav links */}
-          <div className="hidden lg:flex items-center gap-10 xl:gap-[6rem]">
+          <div className="hidden lg:flex flex-1 max-w-[800px] xl:max-w-[1000px] 2xl:max-w-[1200px] justify-between items-center ml-8 xl:ml-12">
             {NAV_LINKS.map(({ label, href }) => {
               const isActive = activeSection === href.slice(1)
               return (
                 <a
                   key={href}
                   href={href}
-                  className={`text-sm lg:text-[20px] transition-all hover:opacity-60 py-1 ${
+                  className={`text-[13px] xl:text-[14px] whitespace-nowrap transition-all hover:opacity-60 py-1 ${
                     isActive 
-                      ? "font-bold text-black border-b-[3px] border-primary" 
-                      : "font-medium text-foreground/80"
+                      ? "font-bold text-[#2F2119] border-b-[2px] border-primary" 
+                      : "font-medium text-[#4B5563]"
                   }`}
                 >
                   {label}

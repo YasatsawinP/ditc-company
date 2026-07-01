@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full bg-secondary text-white pt-12 lg:pt-20 pb-10 lg:pb-16">
+    <footer className="w-full bg-[#2F1D19] text-white pt-12 lg:pt-20 pb-10 lg:pb-16">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-20">
 
         {/* Footer content: stacked on mobile, 4-col on desktop */}

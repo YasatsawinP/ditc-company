@@ -38,11 +38,21 @@ export default function ContactSection() {
           GET IN TOUCH
         </p>
 
-        <h2 className="text-[14px] lg:text-5xl font-bold text-foreground leading-[27px] lg:leading-[1.3] text-center mb-[10px] lg:mb-[16px]">
+        {/* Mobile Title */}
+        <h2 className="block lg:hidden text-[22px] font-bold text-[#2F2119] leading-[1.3] text-center mb-[12px]">
+          READY TO GET STARTED?
+        </h2>
+        {/* Desktop Title */}
+        <h2 className="hidden lg:block text-[14px] lg:text-5xl font-bold text-foreground leading-[27px] lg:leading-[1.3] text-center mb-[10px] lg:mb-[16px]">
           Have a question? Send us a message.
         </h2>
 
-        <p className="text-[10px] lg:text-[16px] font-normal text-muted-foreground leading-normal lg:leading-relaxed text-center mb-[24px] lg:mb-[48px]">
+        {/* Mobile Subtitle */}
+        <p className="block lg:hidden text-[12px] font-normal text-gray-700 leading-[1.6] text-center mb-[24px] px-2">
+          Whether you're a company looking to train your team<br/>or a trainer ready to share your expertise — drop us a message and let's talk.
+        </p>
+        {/* Desktop Subtitle */}
+        <p className="hidden lg:block text-[10px] lg:text-[16px] font-normal text-muted-foreground leading-normal lg:leading-relaxed text-center mb-[24px] lg:mb-[48px]">
           We typically respond within one working day.
         </p>
 
@@ -51,31 +61,33 @@ export default function ContactSection() {
 
           {/* Left col: info cards + map */}
           <div>
-            <div className="flex flex-col gap-4 mb-8">
+            <div className="flex flex-col gap-[14px] lg:gap-4 mb-8">
               {INFO_CARDS.map((card) => (
                 <div
                   key={card.label}
-                  className="bg-background rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-5 lg:p-6 flex items-center gap-5"
+                  className="bg-white lg:bg-background rounded-3xl lg:rounded-2xl border border-[#F2F2F2] lg:border-none shadow-sm lg:shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-5 lg:p-6 flex items-center gap-4 lg:gap-5"
                 >
-                  <div className="bg-primary/10 text-primary p-3 lg:p-4 rounded-xl flex-shrink-0">
+                  <div className="bg-[#FEEFE6] text-primary lg:bg-primary/10 p-[14px] lg:p-4 rounded-[16px] lg:rounded-xl flex-shrink-0">
                     <card.Icon className="w-6 h-6 lg:w-8 lg:h-8" />
                   </div>
-                  <div className="flex flex-col gap-1">
-                    <p className="text-[11px] lg:text-[13px] font-semibold text-muted-foreground uppercase tracking-wider">
+                  <div className="flex flex-col gap-[2px] lg:gap-1 overflow-hidden">
+                    <p className="text-[11px] lg:text-[13px] font-bold text-gray-500 lg:text-muted-foreground uppercase tracking-wider">
                       {card.label}
                     </p>
-                    <p className="text-[14px] lg:text-[16px] font-semibold text-foreground">{card.value}</p>
+                    <p className="text-[15px] lg:text-[16px] font-bold text-[#2F2119] lg:text-foreground truncate">
+                      {card.value}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Map */}
-            <div className="w-full h-48 lg:h-64 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] overflow-hidden mb-12 lg:mb-0">
+            <div className="w-full h-[220px] lg:h-64 rounded-[20px] lg:rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] lg:shadow-[0_4px_20px_rgba(0,0,0,0.08)] overflow-hidden border-none mb-12 lg:mb-0 bg-gray-100">
               <img
                 src="/images/map-placeholder.png"
                 alt="Map Location"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top scale-[1.08] lg:scale-100 lg:object-center"
               />
             </div>
           </div>
